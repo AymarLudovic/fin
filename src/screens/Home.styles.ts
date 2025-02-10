@@ -1,81 +1,56 @@
 
 
-```typescript
-import { StyleSheet } from "react-native";
+```jsx
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  /**
-   * Layout
-   */
+  // Layout
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-  },
-  header: {
-    height: 50,
-    paddingHorizontal: 16,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: "#eee",
+    backgroundColor: '#f5f5f5',
   },
   content: {
     flex: 1,
-    padding: 16,
-  },
-  listItem: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: "#eee",
+    padding: 20,
   },
 
-  /**
-   * Colors
-   */
+  // Colors
   primary: {
-    color: "#000",
+    color: '#007bff',
   },
   secondary: {
-    color: "#666",
+    color: '#6c757d',
   },
-  success: {
-    color: "#28a745",
-  },
-  warning: {
-    color: "#ffc107",
-  },
-  error: {
-    color: "#dc3545",
+  background: {
+    backgroundColor: '#f5f5f5',
   },
 
-  /**
-   * Typography
-   */
+  // Typography
   title: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   subtitle: {
     fontSize: 18,
-    fontWeight: "normal",
+    fontWeight: 'normal',
   },
-  body: {
+  paragraph: {
     fontSize: 16,
-    fontWeight: "normal",
+    lineHeight: 24,
   },
 
-  /**
-   * Spacing
-   */
+  // Spacing
   margin: {
-    margin: 16,
+    margin: 10,
   },
   padding: {
-    padding: 16,
+    padding: 10,
+  },
+  horizontalMargin: {
+    marginHorizontal: 10,
+  },
+  verticalMargin: {
+    marginVertical: 10,
   },
 });
 
