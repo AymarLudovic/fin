@@ -1,6 +1,6 @@
 
 
-```jsx
+```javascript
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -8,33 +8,43 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  storiesContainer: {
+  header: {
+    height: 60,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  storiesList: {
+    flex: 1,
+    padding: 16,
+  },
+  storyItem: {
+    marginBottom: 16,
     flexDirection: 'row',
     alignItems: 'center',
   },
-  storyItem: {
-    marginHorizontal: 8,
-  },
   storyImage: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    borderColor: '#000',
-    borderWidth: 2,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+  },
+  storyInfo: {
+    marginLeft: 16,
+  },
+  storyName: {
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   storyUsername: {
-    marginTop: 5,
-    fontSize: 12,
-    color: '#000',
-    textAlign: 'center',
-  },
-  addStoryButton: {
-    position: 'absolute',
-    right: 0,
-    top: 0,
-    padding: 8,
-    backgroundColor: '#000',
-    borderRadius: 50,
+    fontSize: 14,
+    color: '#666',
   },
 });
 
