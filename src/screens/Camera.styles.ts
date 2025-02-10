@@ -1,46 +1,71 @@
 
 
-```jsx
-import { StyleSheet } from "react-native";
+```javascript
+import { StyleSheet } from 'react-native';
+import { moderateScale } from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
-  // Layout
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
   },
-  cameraPreview: {
+  camera: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   captureButton: {
-    position: "absolute",
-    bottom: 20,
-    right: 20,
-    backgroundColor: "#000",
-    borderRadius: 50,
-    padding: 20,
+    width: moderateScale(60),
+    height: moderateScale(60),
+    borderRadius: moderateScale(30),
+    backgroundColor: '#000',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-
-  // Colors
-  primary: "#000",
-  secondary: "#fff",
-  accent: "#f00",
-
-  // Typography
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#000",
+  facingButton: {
+    position: 'absolute',
+    top: moderateScale(10),
+    left: moderateScale(10),
+    width: moderateScale(40),
+    height: moderateScale(40),
+    borderRadius: moderateScale(20),
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  subtitle: {
-    fontSize: 18,
-    fontWeight: "normal",
-    color: "#666",
+  flashButton: {
+    position: 'absolute',
+    top: moderateScale(10),
+    right: moderateScale(10),
+    width: moderateScale(40),
+    height: moderateScale(40),
+    borderRadius: moderateScale(20),
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-
-  // Spacing
-  margin: 20,
-  padding: 10,
+  preview: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: moderateScale(200),
+    width: moderateScale(200),
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#000',
+    borderRadius: moderateScale(10),
+  },
+  picture: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#000',
+    height: moderateScale(200),
+    width: moderateScale(200),
+  },
+  text: {
+    color: '#fff',
+    fontSize: moderateScale(16),
+  },
 });
 
 export default styles;
