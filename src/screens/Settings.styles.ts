@@ -1,58 +1,43 @@
 
 
 ```javascript
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { colors, typography } from './theme';
 
-const styles = StyleSheet.create({
+export const settingsStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.background,
   },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-  },
-  headerTitle: {
-    fontSize: 20,
+  sectionHeader: {
+    ...typography.header6,
+    fontSize: 18,
     fontWeight: 'bold',
-  },
-  settingsList: {
-    flex: 1,
+    color: colors.text,
+    marginBottom: 12,
   },
   settingItem: {
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 15,
+    paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
+    borderBottomColor: colors.border,
   },
-  settingItemText: {
-    fontSize: 16,
+  settingItemLabel: {
+    ...typography.body3,
+    color: colors.text,
   },
-  settingItemSwitch: {
-    marginRight: 10,
+  settingItemValue: {
+    ...typography.body3,
+    color: colors.text,
   },
-  footer: {
-    padding: 20,
+  toggleSwitch: {
+    transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }],
   },
-  footerButton: {
-    backgroundColor: '#007bff',
-    borderRadius: 5,
-    padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  footerButtonText: {
-    color: '#ffffff',
-    fontSize: 16,
+  spacingVertical: {
+    marginVertical: 12,
   },
 });
-
-export default styles;
 ```
 
