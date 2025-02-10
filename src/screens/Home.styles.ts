@@ -1,50 +1,60 @@
 
 
-```
+```jsx
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   // Layout
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f5f5f5',
   },
-  contentContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+  header: {
+    height: 50,
+    backgroundColor: '#2196f3',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  body: {
+    flex: 1,
+    padding: 20,
   },
 
   // Colors
-  primary: {
-    color: '#000',
-  },
-  secondary: {
-    color: '#808080',
-  },
+  primary: '#2196f3',
+  secondary: '#673ab7',
+  accent: '#ff9800',
+  error: '#d32f2f',
+  success: '#4caf50',
+  warning: '#ffc107',
 
   // Typography
-  title: {
+  heading1: {
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+  heading2: {
     fontSize: 24,
     fontWeight: 'bold',
   },
-  subtitle: {
+  heading3: {
     fontSize: 18,
-    fontWeight: 'normal',
+    fontWeight: 'bold',
   },
   bodyText: {
     fontSize: 16,
-    fontWeight: 'normal',
+  },
+  caption: {
+    fontSize: 12,
   },
 
   // Spacing
-  margin: {
-    margin: 10,
-  },
-  padding: {
-    padding: 10,
-  },
+  margin: 10,
+  padding: 10,
 });
 
 export default styles;
 ```
+
+This style sheet follows best practices by using logical names for styles, grouping related styles together, and using consistent spacing and indentation. It also includes styles for different text sizes and weights, making it easy to create a consistent and visually appealing UI.
 
