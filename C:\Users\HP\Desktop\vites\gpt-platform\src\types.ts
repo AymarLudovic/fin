@@ -1,56 +1,27 @@
-interface Application {
-  pages: Page[];
-  features: Feature[];
-  design: Design;
+interface Post {
+  id: string;
+  author: User;
+  content: string;
+  images: string[];
+  likes: number;
+  comments: Comment[];
+  createdAt: string;
+  updatedAt: string;
 }
 
-interface Page {
+interface User {
+  id: string;
   name: string;
-  components: Component[];
+  username: string;
+  profilePicture: string;
+  followers: User[];
+  following: User[];
 }
 
-interface Component {
-  name: string;
-  type: string;
-  properties: Property[];
-}
-
-interface Property {
-  name: string;
-  type: string;
-  value: any;
-}
-
-interface Feature {
-  name: string;
-  description: string;
-  requirements: Requirement[];
-}
-
-interface Requirement {
-  name: string;
-  type: string;
-  value: any;
-}
-
-interface Design {
-  colors: Color[];
-  fonts: Font[];
-  images: Image[];
-}
-
-interface Color {
-  name: string;
-  hex: string;
-}
-
-interface Font {
-  name: string;
-  family: string;
-  size: number;
-}
-
-interface Image {
-  name: string;
-  path: string;
+interface Comment {
+  id: string;
+  author: User;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
 }
