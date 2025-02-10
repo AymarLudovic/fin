@@ -1,31 +1,36 @@
 
 
-```jsx
-import { StyleSheet } from 'react-native';
+```javascript
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#F5F5F5',
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 6,
-    borderWidth: 1,
-    borderColor: '#C4C4C4',
-    height: 48,
-    margin: 16,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 10,
+    height: 50,
+    margin: 10,
+    padding: 10,
   },
   searchInput: {
     flex: 1,
     fontSize: 16,
-    marginLeft: 12,
+    color: '#000000',
   },
-  searchIcon: {
-    marginLeft: 8,
-    marginRight: 12,
+  searchButton: {
+    marginLeft: 10,
+    backgroundColor: '#000000',
+    borderRadius: 5,
+    height: 30,
+    width: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   resultsContainer: {
     flex: 1,
@@ -35,19 +40,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: '#FFFFFF',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
+    borderRadius: 5,
+    padding: 10,
+    margin: 10,
   },
-  resultItemText: {
-    fontSize: 16,
+  resultItemTitle: {
+    fontSize: 18,
+    color: '#000000',
   },
-  resultItemDetails: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  resultItemIcon: {
-    marginLeft: 8,
+  resultItemDescription: {
+    fontSize: 14,
+    color: '#666666',
   },
 });
 
