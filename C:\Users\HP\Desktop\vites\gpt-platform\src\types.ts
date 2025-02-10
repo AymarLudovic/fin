@@ -1,45 +1,36 @@
-interface AppState {
-  user: User;
-  posts: Post[];
-  notifications: Notification[];
-  messages: Message[];
-}
+type Image = {
+  id: string;
+  url: string;
+  caption: string;
+  likes: number;
+  comments: number;
+  userId: string;
+};
 
-interface User {
+type User = {
   id: string;
   username: string;
   email: string;
-  profilePicture: string;
+  profileImage: string;
   bio: string;
-  followersCount: number;
-  followingCount: number;
-  postsCount: number;
-}
+  followers: number;
+  following: number;
+  images: Image[];
+};
 
-interface Post {
-  id: string;
-  userId: string;
-  timestamp: number;
-  caption: string;
-  imageUrl: string;
-  likesCount: number;
-  commentsCount: number;
-}
+type FeedState = {
+  images: Image[];
+  loading: boolean;
+  error: string | null;
+};
 
-interface Notification {
-  id: string;
-  type: string;
-  senderId: string;
-  receiverId: string;
-  timestamp: number;
-  read: boolean;
-}
+type ProfileState = {
+  user: User | null;
+  loading: boolean;
+  error: string | null;
+};
 
-interface Message {
-  id: string;
-  senderId: string;
-  receiverId: string;
-  timestamp: number;
-  text: string;
-  read: boolean;
-}
+type AppState = {
+  feed: FeedState;
+  profile: ProfileState;
+};
