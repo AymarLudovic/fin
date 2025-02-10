@@ -4,85 +4,54 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  // Layout
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#F5F5F5',
   },
-
   header: {
-    height: 200,
-    backgroundColor: '#f4f4f4',
-    justifyContent: 'center',
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 20,
+    backgroundColor: '#FFF',
+  },
+  body: {
+    flex: 1,
+    padding: 20,
   },
 
-  profileImage: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    borderWidth: 4,
-    borderColor: 'white',
+  // Colors
+  textPrimary: {
+    color: '#000',
+  },
+  textSecondary: {
+    color: '#777',
+  },
+  accentColor: {
+    color: '#4CAF50',
   },
 
-  nameText: {
+  // Typography
+  title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 10,
   },
-
-  bioText: {
-    fontSize: 16,
-    marginTop: 10,
-    marginHorizontal: 20,
-    textAlign: 'center',
-  },
-
-  statsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 20,
-    paddingHorizontal: 20,
-  },
-
-  statsItem: {
-    alignItems: 'center',
-  },
-
-  statsCountText: {
+  subtitle: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
-
-  statsLabelText: {
-    fontSize: 14,
-    color: '#888',
-  },
-
-  postsContainer: {
-    marginTop: 20,
-  },
-
-  postItem: {
-    padding: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: '#f4f4f4',
-  },
-
-  postTitleText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-
-  postBodyText: {
+  bodyText: {
     fontSize: 16,
-    marginTop: 10,
+    lineHeight: 20,
   },
 
-  postDateText: {
-    fontSize: 14,
-    color: '#888',
-    marginTop: 10,
+  // Spacing
+  margin: {
+    margin: 10,
+  },
+  padding: {
+    padding: 10,
   },
 });
 
