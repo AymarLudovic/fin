@@ -1,33 +1,70 @@
-import React, { useEffect, useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { ThemeProvider } from "styled-components";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import 'react-native-gesture-handler';
+import { StatusBar } from 'expo-status-bar';
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
+import HomeScreen from './src/screens/HomeScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+import { DeepLink, Linking } from 'expo';
 
-// Import screens
-import HomeScreen from "./screens/HomeScreen";
+const Stack = createStackNavigator();
 
-// Define navigation types for screens
-type ScreenProps = {
-  navigation: any;
+type RootStackParamList = {
+  Home: undefined;
+  Profile: { username: string };
 };
 
-// Create the stack navigator
-const Stack = createStackNavigator<ScreenProps>();
-
 export default function App() {
-  const [theme, setTheme] = useState("light");
+  const [initialNavigationState, setInitialNavigationState] = useState<any>();
+  const [isReady, setIsReady] = useState(false);
+  const deepLink = Linking.createURL('/profile/username');
 
-  return (
-    <ThemeProvider theme={theme}>
-      <SafeAreaProvider>
-        <NavigationContainer>
+  useEffect(() => {
+    Linking.addEventListener('url', handleDeepLink);
+
+    return () => {
+      Linking.removeEventListener('url', handleDeepLink);
+    };
+  }, []);
+
+  const handleDeepLink = (event: any) => {
+    const data = event.url;
+    if (data) {
+      setInitialNavigationState({
+        routes: [
+          {
+            name: 'Profile',
+            params: {
+              username: data.split('/')[2],
+            },
+          },
+        ],
+      });
+    }
+  };
+
+  if (isReady) {
+    return (
+      <>
+        <StatusBar barStyle="dark-content" />
+        <NavigationContainer initialState={initialNavigationState}>
           <Stack.Navigator>
-            {/* Define the screens and their navigation options */}
-            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen
+              name="Home"
+              component={HomeScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Profile"
+              component={ProfileScreen}
+              options={{ headerShown: false }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
-      </SafeAreaProvider>
-    </ThemeProvider>
-  );
+      </>
+    );
+  } else {
+    return null;
+  }
 }
