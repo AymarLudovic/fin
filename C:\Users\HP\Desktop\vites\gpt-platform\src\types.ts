@@ -1,66 +1,39 @@
 interface AppState {
-  clone: Clone;
-  view: View;
+  videos: Video[];
+  currentUser: User;
+  isAuthenticated: boolean;
 }
 
-interface Clone {
+interface Video {
   id: string;
-  name: string;
+  title: string;
   description: string;
-  type: CloneType;
-  features: CloneFeature[];
-  pages: ClonePage[];
+  url: string;
+  likes: number;
+  dislikes: number;
+  comments: Comment[];
+  user: User;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-enum CloneType {
-  TikTok,
-  Instagram,
-  Snapchat,
-  YouTubeShorts
+interface User {
+  id: string;
+  username: string;
+  email: string;
+  profilePicture: string;
+  bio: string;
+  followers: User[];
+  following: User[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-interface CloneFeature {
-  name: string;
-  description: string;
-  icon: string;
-}
-
-interface ClonePage {
-  name: string;
-  description: string;
-  components: CloneComponent[];
-}
-
-interface CloneComponent {
-  type: ComponentType;
-  properties: ComponentProperties;
-}
-
-enum ComponentType {
-  Button,
-  Text,
-  Image,
-  Video
-}
-
-interface ComponentProperties {
+interface Comment {
+  id: string;
   text: string;
-  imageUrl: string;
-  videoUrl: string;
+  user: User;
+  videoId: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
-
-interface View {
-  currentPage: ClonePage;
-  currentComponent: CloneComponent;
-}
-
-export type {
-  AppState,
-  Clone,
-  CloneFeature,
-  ClonePage,
-  CloneComponent,
-  ComponentType,
-  ComponentProperties,
-  View
-};
